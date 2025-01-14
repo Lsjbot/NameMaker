@@ -68,6 +68,7 @@ namespace NameMaker
                 }
                 memo("Normalizing...");
                 ttc.normalize();
+                Generatebutton.Enabled = true;
                 memo("===Done!===");
 
             }
@@ -80,20 +81,20 @@ namespace NameMaker
             char c = ttc.get_next(transitiontableclass.startchar);
             //string c2 = transitiontableclass.startchar.ToString() + c;
             StringBuilder sb2 = new StringBuilder();
-            do
-            {
-                sb.Clear();
-                c = ttc.get_next(transitiontableclass.startchar);
-                while (c != transitiontableclass.endchar)
-                {
-                    sb.Append(c);
-                    c = ttc.get_next(c);
-                    if (sb.Length > 30)
-                        break;
-                }
-            }
-            while(namelist.Contains(sb.ToString()));
-            namelist.Add(sb.ToString());
+            //do
+            //{
+            //    sb.Clear();
+            //    c = ttc.get_next(transitiontableclass.startchar);
+            //    while (c != transitiontableclass.endchar)
+            //    {
+            //        sb.Append(c);
+            //        c = ttc.get_next(c);
+            //        if (sb.Length > 15)
+            //            break;
+            //    }
+            //}
+            //while(namelist.Contains(sb.ToString()));
+            //namelist.Add(sb.ToString());
 
             do
             {
@@ -108,12 +109,13 @@ namespace NameMaker
                     sb2.Append(c);
                     c = ttc.get_next(c2);
                     c2 = c2.Substring(1) + c;
-                    if (sb2.Length > 30)
+                    if (sb2.Length > 15)
                         break;
                 }
             }
             while (namelist.Contains(sb2.ToString().Trim('#')));
-            memo(sb.ToString() + "\t" + sb2.ToString().Trim('#'));
+            //memo(sb.ToString() + "\t" + sb2.ToString().Trim('#'));
+            memo(sb2.ToString().Trim('#'));
             namelist.Add(sb2.ToString().Trim('#'));
         }
 

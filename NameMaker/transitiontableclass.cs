@@ -37,6 +37,7 @@ namespace NameMaker
         {
             addpair(c1, c2, 1);
         }
+
         public void addpair(string c1, char c2, double w)
         {
             if (!table2.ContainsKey(c1))

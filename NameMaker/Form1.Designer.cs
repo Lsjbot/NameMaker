@@ -71,6 +71,7 @@ namespace NameMaker
             // 
             // Generatebutton
             // 
+            this.Generatebutton.Enabled = false;
             this.Generatebutton.Location = new System.Drawing.Point(650, 238);
             this.Generatebutton.Name = "Generatebutton";
             this.Generatebutton.Size = new System.Drawing.Size(118, 36);
